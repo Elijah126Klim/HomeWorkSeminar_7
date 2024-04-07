@@ -5,22 +5,50 @@
 // M = 4; N = 8 => "4, 5, 6, 7, 8"
 // M = 8; N = 4 => "8, 7, 6, 5, 4"
 
-Console.WriteLine("Введите неотрицательные числа m и n:");
-int m = Convert.ToInt32(Console.ReadLine());
-int n = Convert.ToInt32(Console.ReadLine());
-
-void PrintNumbers(int m, int n) // делаем вызов функции 
-                                // в которую передаем начальное и последнее числа
+void NaturalNumbersBetweenMN(int m, int n)
 {
-    if (m > n) // делаем точку остановки //  если это  цикл перенсти вниз
-               //  на две строки то не дойдем до проверки и функция не остановится и зависнет
+    if (m == n)
     {
+        Console.Write($"{m}");
         return;
     }
-    Console.Write(m + " "); // до этого вызов переменной старт
 
-    PrintNumbers(m + 1, n); //прибавляем один к стартовому числу
+    Console.Write($"{m}, ");
+    NaturalNumbersBetweenMN(m + 1, n);
 }
 
-PrintNumbers(m, n);
+void NaturalNumbersBetweenNM(int m, int n)
+{
+    if (m == n)
+    {
+        Console.Write($"{m}");
+        return;
+    }
+
+    Console.Write($"{m}, ");
+    NaturalNumbersBetweenNM(m - 1, n);
+}
+
+void PrintNum(int m, int n)
+{
+    if (m < n)
+    {
+        NaturalNumbersBetweenMN(m, n);
+    }
+    else if (m > n)
+    {
+        NaturalNumbersBetweenNM(m, n);
+    }
+    else
+    {
+        Console.Write(n); // or "m", becouse m = n
+    }
+}
+
+Console.WriteLine("Введите первое число");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число");
+int n = Convert.ToInt32(Console.ReadLine());
+
+PrintNum(m, n);
 
