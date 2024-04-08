@@ -6,6 +6,11 @@
 // M = 8; N = 4 => "8, 7, 6, 5, 4"
 
 
+Console.WriteLine("Введите первое число");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число");
+int n = Convert.ToInt32(Console.ReadLine());
+
 void NaturalNumbersBetweenMN(int m, int n)
 {
     if (m == n)
@@ -46,10 +51,6 @@ void PrintNum(int m, int n)
     }
 }
 
-Console.WriteLine("Введите первое число");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число");
-int n = Convert.ToInt32(Console.ReadLine());
 
 PrintNum(m, n);
 
