@@ -4,21 +4,18 @@
 // n = 3, m = 2 -> A(m,n) = 29
 // n = 3, m = 11 -> A(m,n) = 16381
 
-int FunctionOfAkkerman(int n, int m)
+int FunctOfAkkerman(int n, int m)
 {
     if (n == 0)
     {
         return m + 1;
     }
-    else if (m == 0)
+    if (m == 0)
     {
-        return FunctionOfAkkerman(n - 1, 1);
+        return FunctOfAkkerman(n - 1, 1);
     }
-    else
-    {
-        return FunctionOfAkkerman(n - 1, FunctionOfAkkerman(n, m - 1));
-    }
+    return FunctOfAkkerman(n - 1, FunctOfAkkerman(n, m - 1));
 }
 
-int functionOfAkkerman = FunctionOfAkkerman(3, 11);
+int functionOfAkkerman = FunctOfAkkerman(3, 11);
 Console.WriteLine(functionOfAkkerman);
