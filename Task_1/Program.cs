@@ -37,6 +37,11 @@ void NaturalNumbersBetweenNM(int m, int n)
 
 void PrintNum(int m, int n)
 {
+    if (m == 0 || n == 0) return;
+    // {
+        // Console.WriteLine("Некорр ввод");
+    // }
+
     if (m < n)
     {
         NaturalNumbersBetweenMN(m, n);
@@ -47,7 +52,7 @@ void PrintNum(int m, int n)
     }
     else
     {
-        Console.Write(n); // or "m", becouse m = n
+        Console.Write(n); 
     }
 }
 
